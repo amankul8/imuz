@@ -1,0 +1,22 @@
+.footerWrapper{
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(93.79deg, #FDFDFD 55.49%, #D4FBFB 92.55%, #A9F9F9 100%, #C2F9F9 100%);
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding: 15px 30px 15px 30px;
+  .iconWrapper{
+    width: 20%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img{
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}

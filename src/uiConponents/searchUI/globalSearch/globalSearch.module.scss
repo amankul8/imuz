@@ -1,0 +1,27 @@
+.formWrapper{
+  width: 600px;
+  height: 50px;
+  display: flex;
+  align-content: center;
+  margin-top: 50px;
+  input{
+    width: 530px;
+    height: 50px;
+    border-radius: 5px 0 0 5px;
+    background-color: #F8F7F7;
+    outline: none;
+    border: none;
+    padding: 0 10px 0 10px;
+  }
+  button{
+    width: 70px;
+    height: 50px;
+    border-radius: 0 5px 5px 0;
+    background-color: #EBEBEB;
+    outline: none;
+    border: none;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}

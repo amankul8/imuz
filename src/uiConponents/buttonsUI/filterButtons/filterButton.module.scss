@@ -1,0 +1,20 @@
+.filButton{
+  padding: 8px 12px 8px 12px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 500ms;
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.25);
+    background-color: #F2FFFF;
+  }
+}
+.active{
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.25);
+  background-color: #F2FFFF;
+}

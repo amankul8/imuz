@@ -1,0 +1,19 @@
+.formWrapper{
+  width: 600px;
+  height: 40px;
+  display: flex;
+  align-content: center;
+  border-radius: 5px;
+  input{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    border: none;
+    padding: 0 10px 0 10px;
+    background-color: #F2FFFF;
+    &:focus{
+      box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.25);
+    }
+  }
+ }

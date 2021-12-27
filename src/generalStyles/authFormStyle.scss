@@ -1,0 +1,79 @@
+%genericAuthFormStyle{
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 60px 3% 80px 3%;
+
+  form{
+    align-self: center;
+    width: 180px;
+    .formTittle{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 10px 0 30px 0;
+      font-family: Roboto sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .inputWrapper{
+      background-color: #EBEBEB;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 45px;
+      width: 100%;
+      border-radius: 25px;
+      padding: 0 20px;
+      margin-bottom: 5px;
+      input{
+        width: 90%;
+        border: none;
+        background: none;
+        padding: 3px 5px;
+        margin-left: 10px;
+        &:focus{
+          border: none;
+          background: none;
+          outline: none;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+      }
+    }
+    .buttonWrapper{
+      width: 100%;
+      height: 45px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      border-radius: 25px;
+      border: none;
+      background-color: #93dfff;
+      font-weight: bold;
+      font-family: Roboto sans-serif;
+      font-size: 18px;
+      color: white;
+      margin-top: 20px;
+      transition: 300ms ease-in;
+      &:hover{
+        cursor: pointer;
+        color: green;
+      }
+    }
+  }
+
+  .imageWrapper{
+    align-self: center;
+    img{
+      width: 200px;
+      height: 200px;
+    }
+  }
+}

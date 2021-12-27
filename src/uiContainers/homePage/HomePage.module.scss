@@ -1,0 +1,8 @@
+@import "../../generalStyles/mainPagesStyle";
+
+.backWrapper{
+  @extend %back-page-style;
+}
+.mainPageWrapper{
+  @extend %main-page-style;
+}

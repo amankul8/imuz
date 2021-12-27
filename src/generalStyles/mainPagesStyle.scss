@@ -1,0 +1,19 @@
+%back-page-style{
+  background-color: #F16393;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 0 20px 0;
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+%main-page-style{
+  width: 1217px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+}

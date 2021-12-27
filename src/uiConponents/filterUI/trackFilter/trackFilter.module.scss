@@ -1,0 +1,4 @@
+@import "./../../../generalStyles/filterGeneralStyle";
+.filterWrapper{
+  @extend %filterStyle;
+}
