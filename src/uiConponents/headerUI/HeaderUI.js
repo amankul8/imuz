@@ -5,7 +5,7 @@ import classes from './HeaderUI.module.scss';
 import UserAccDeactivate from "../userAcc/userAccdDeactivate/UserAccDeactivate";
 import UserAccActive from "../userAcc/userAccActive/UserAccActive";
 import {connect} from "react-redux"
-import {userAccActivate, userAccDeactivate} from "../../redux/actions/userAuthAactionCreator";
+import {userAccActivate, userAccDeactivate} from "../../redux/actions/userAccActionCreator";
 
 const HeaderUI = (props)=>{
 

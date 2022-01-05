@@ -20,6 +20,7 @@ function PasswordInputComponent(props){
         <input
             type="password"
             placeholder="Password"
+            value={props.password}
             onChange={(e)=>{inputHandler(e.target.value)}}
         />
     )
@@ -30,4 +31,11 @@ const mapDispatchToProps = {
     inputPasswordError,
 }
 
-export default connect(null,mapDispatchToProps)(PasswordInputComponent);
+const mapStateToProps = (state)=>{
+    return{
+        password: state.authPageState.inputStates.password.password
+    }
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(PasswordInputComponent);

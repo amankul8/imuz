@@ -3,16 +3,14 @@ import {connect} from "react-redux";
 
 function SendComponent(props){
 
-    const sendHandler = (e)=>{
-        e.preventDefault();
-
-    }
-
     return(
         <button
             className={props.clsName}
             type="submit"
-            onClick={e=>{sendHandler(e)}}
+            onClick={e=>{
+                e.preventDefault();
+                props.sendHandler()}
+            }
         >
             Send
         </button>

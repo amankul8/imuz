@@ -29,3 +29,6 @@ export const INPUT_TEXT_ERROR = "INPUT_TEXT_ERROR";
 export const INPUT_MAIL_ERROR = "INPUT_MAIL_ERROR";
 export const INPUT_PASSWORD_ERROR = "INPUT_PASSWORD_ERROR";
 export const INPUT_RESETS = "INPUT_RESETS";
+
+//----------------------auth------------------------------------
+export const USER_DATA_SAVE = "USER_DATA_SAVE";

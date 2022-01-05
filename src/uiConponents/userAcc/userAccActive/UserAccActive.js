@@ -1,7 +1,7 @@
 import classes from "./userAccActive.module.scss";
 import user_acc_logo from "../../../images/user_acc_logo.png"
 import {connect} from "react-redux";
-import {userAccNavBarActivate, userAccNavBarDeactivate} from "../../../redux/actions/userAuthAactionCreator";
+import {userAccNavBarActivate, userAccNavBarDeactivate} from "../../../redux/actions/userAccActionCreator";
 
 const UserAccActive = (props)=>{
     let cls1 = [classes.block_2];

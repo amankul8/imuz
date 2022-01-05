@@ -5,7 +5,7 @@ import AuthorizationUI from "../authorizationUI/AuthorizationUI";
 import RegistrationUI from "../registrationUI/RegistrationUI";
 import ForgetPassUI from "../forgetPassUI/ForgetPassUI";
 import {connect} from "react-redux";
-import {authPageShow, authPageHide, } from "../../../redux/actions/userAuthAactionCreator";
+import {authPageShow, authPageHide, } from "../../../redux/actions/userAccActionCreator";
 import {inputReset} from "../../../redux/actions/authInputActionCreator";
 
 
@@ -38,6 +38,7 @@ const Auth = (props) => {
         <div ref={backPage} className={cls.join(" ")} onClick={() => {
             props.authPageHide()
         }}>
+
             <div className={classes.authWrapper} onClick={(e) => e.stopPropagation()}>
                 <div>
                     {

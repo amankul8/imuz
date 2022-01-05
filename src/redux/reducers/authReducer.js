@@ -1,5 +1,6 @@
-import {AUTH_PAGE_SHOW,AUTH_PAGE_HIDE} from "../types/appTypes";
 import {
+    AUTH_PAGE_SHOW,
+    AUTH_PAGE_HIDE,
     INPUT_TEXT_CHANGE,
     INPUT_MAIL_CHANGE,
     INPUT_PASSWORD_CHANGE,

@@ -30,11 +30,13 @@ function  InputTextComponent(props){
         }
         props.inputTextChange(text);
     }
+
     return(
         <>
             <input
                 type="text"
                 placeholder="Nickname"
+                value={props.text}
                 onChange={(e)=>{
                 inputHandler(e.target.value);
             }}/>
@@ -47,4 +49,10 @@ const mapDispatchToProps = {
     inputTextError,
 }
 
-export default connect(null, mapDispatchToProps)(InputTextComponent);
+const mapStateToProps = (state)=>{
+    return{
+        text: state.authPageState.inputStates.nickName.text
+    }
+}
+
+export default connect( mapStateToProps, mapDispatchToProps)(InputTextComponent);

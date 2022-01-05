@@ -6,12 +6,20 @@ import MenuUI from "../../uiConponents/menuUI/MenuUI";
 import Footer from "../../uiConponents/footerUI/Footer";
 import HomeContent from "../../uiConponents/contentsUI/homeContent/HomeContent";
 import Fon from "../fon/Fon";
-
+import axios from "axios";
 
 class HomePage extends React.Component{
     constructor(props) {
         super(props);
     }
+
+    // componentWillUnmount() {
+    //     console.log("HI");
+    //     axios.get("http://localhost:8000/imuz").then((res)=>{
+    //         console.log(res.data);
+    //     }).catch()
+    // }
+
 
     render() {
         return(
@@ -23,6 +31,7 @@ class HomePage extends React.Component{
                     <HomeContent/>
                     <Footer/>
                 </div>
+
             </Fon>
         )
     }

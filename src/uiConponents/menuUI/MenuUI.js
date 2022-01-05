@@ -17,7 +17,7 @@ const MenuUI = (props)=>{
         {image: homeIcon, text: 'Home', url: '/home'},
         {image: usersIcon, text: 'Users', url: '/users'},
         {image: musicsIcon, text: 'Musics', url: '/musics'},
-        {image: playListIcon, text: 'My PlatList', url: '/play_list'},
+        {image: playListIcon, text: 'My PlayList', url: '/play_list'},
         {image: friendsIcon, text: 'Friends', url: '/friends'},
         {image: searchIcon, text: 'Search', url: '/search'}
     ]

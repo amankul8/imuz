@@ -1,6 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
-import {userAccNavBarDeactivate} from "../../redux/actions/userAuthAactionCreator";
+import {userAccNavBarDeactivate} from "../../redux/actions/userAccActionCreator";
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Fon(props){
 
@@ -9,10 +11,20 @@ function Fon(props){
             props.userAccNavBarDeactivate();
         }
     }
-
     return(
         <div className={props.styles} onClick={hideAccNavBarHandler}>
             {props.children}
+            <ToastContainer
+                position="bottom-right"
+                autoClose={8000}
+                hideProgressBar={true}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable
+                pauseOnHover
+            />
         </div>
     )
 }

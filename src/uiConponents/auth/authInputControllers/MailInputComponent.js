@@ -24,7 +24,8 @@ function MailInputComponent(props){
     return(
         <input
             type="email"
-            placeholder="Password"
+            placeholder="Email"
+            value={props.email}
             onChange={(e)=>{inputHandler(e.target.value)}}
         />
     )
@@ -35,5 +36,11 @@ const mapDispatchToProps = {
         inputMailError,
 }
 
-export default connect(null,mapDispatchToProps)(MailInputComponent);
+const mapStateToProps = (state)=>{
+    return{
+        email: state.authPageState.inputStates.email.email
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(MailInputComponent);
 
