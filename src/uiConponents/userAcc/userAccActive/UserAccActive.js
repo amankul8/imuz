@@ -1,7 +1,11 @@
 import classes from "./userAccActive.module.scss";
 import user_acc_logo from "../../../images/user_acc_logo.png"
 import {connect} from "react-redux";
-import {userAccNavBarActivate, userAccNavBarDeactivate} from "../../../redux/actions/userAccActionCreator";
+import {
+    userAccDeactivate,
+    userAccNavBarActivate,
+    userAccNavBarDeactivate
+} from "../../../redux/actions/userAccActionCreator";
 
 const UserAccActive = (props)=>{
     let cls1 = [classes.block_2];
@@ -29,12 +33,12 @@ const UserAccActive = (props)=>{
                 <div className={classes.user_avatar}>
                     <img src={user_acc_logo} alt=""/>
                 </div>
-                <div>nickname</div>
+                <div>{props.userInfo.nickname}</div>
             </div>
             <div className={cls1.join(' ')} onClick={(e)=>{e.stopPropagation()}}>
-                <div>Gmail</div>
+                <div>{props.userInfo.email}</div>
                 <div>Setting</div>
-                <div>Sing out</div>
+                <div onClick={()=>{props.userAccDeactivate()}}>Sing out</div>
             </div>
         </div>
     )
@@ -48,7 +52,8 @@ const mapStateToProps = state=>{
 
 const mapDispatchToProps = {
     userAccNavBarActivate,
-    userAccNavBarDeactivate
+    userAccNavBarDeactivate,
+    userAccDeactivate
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserAccActive);

@@ -5,7 +5,6 @@ import classes from './HeaderUI.module.scss';
 import UserAccDeactivate from "../userAcc/userAccdDeactivate/UserAccDeactivate";
 import UserAccActive from "../userAcc/userAccActive/UserAccActive";
 import {connect} from "react-redux"
-import {userAccActivate, userAccDeactivate} from "../../redux/actions/userAccActionCreator";
 
 const HeaderUI = (props)=>{
 
@@ -14,7 +13,7 @@ const HeaderUI = (props)=>{
             <img className={classes.logo} src={logo} alt=""/>
             <GlobalSearch/>
             {
-                props.userAcc.active ? <UserAccActive/> : <UserAccDeactivate/>
+                props.userAcc ? <UserAccActive userInfo={props.userInfo}/> : <UserAccDeactivate/>
             }
         </div>
     )
@@ -22,14 +21,11 @@ const HeaderUI = (props)=>{
 
 const mapStateToProps = state=>{
     return{
-        userAcc: state.userAccState.userAcc
+        userAcc: state.userAccState.userAcc.active,
+        userInfo: state.userAccState.userAcc.user
     }
 }
 
-const mapDispatchToProps = {
-    userAccActivate,
-    userAccDeactivate
-}
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderUI);
+export default connect(mapStateToProps, null)(HeaderUI);

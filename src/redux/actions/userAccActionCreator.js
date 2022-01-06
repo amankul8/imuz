@@ -27,7 +27,7 @@ export function userAccActivate(){
 
 export function userAccDeactivate(){
     return{
-        type: USER_ACC_DEACTIVATE,
+        type: USER_ACC_DEACTIVATE
     }
 }
 
@@ -36,6 +36,7 @@ export function userAccNavBarActivate(){
         type: USER_ACC_NAVBAR_ACTIVATE
     }
 }
+
 export function userAccNavBarDeactivate(){
     return{
         type: USER_ACC_NAVBAR_DEACTIVATE
@@ -44,26 +45,48 @@ export function userAccNavBarDeactivate(){
 
 export function userDateSave(pl){
     return{
-        type: USER_DATA_SAVE
+        type: USER_DATA_SAVE,
+        payload: pl
     }
 }
 
 export function userRegistration(pl){
     toast.info("Request has been sent. !WAIT");
     return dispatch => {
-        axios.post(`http://localhost:5000/imuz/users/user/auth/registration`, {
-                nickname: pl.nickname,
-                email: pl.email,
-                password: pl.password
-            })
+        axios.post(`http://localhost:5000/imuz/users/user/auth/registration`, pl)
             .then(res => {
-                toast.info("User created success !");
-                toast.info("Go through authorization !");
+                if(res.status===201){
+                    dispatch(inputReset());
+                    toast.info("User created success !");
+                    toast.info("Go through authorization !");
+                }else{
+                    toast.info(res.data.message);
+                }
+            })
+            .catch(err => {
+                toast.info(err.message);
+            });
+    };
+}
+
+
+export function userAuthorization(pl){
+    toast.info("Request has been sent. !WAIT");
+    return dispatch => {
+        axios.post("http://localhost:5000/imuz/users/user/auth/authentication", pl)
+            .then(res => {
+                toast.info("User authorization success!");
+                dispatch(userDateSave({
+                    id: res.data._id,
+                    nickname: res.data.nickname,
+                    email: res.data.email,
+                    password: res.data.password
+                }));
+                dispatch(userAccActivate());
                 dispatch(inputReset());
             })
             .catch(err => {
-                toast.info("Error while creating !");
+                toast.info("Error while authorization !");
             });
     };
-
 }

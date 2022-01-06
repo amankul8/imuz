@@ -28,14 +28,19 @@ export const userAccReducer = (state = initialState, action)=>{
             temp = {...state};
             temp.userAcc.active = true
             return {...temp};
+
         case USER_ACC_DEACTIVATE:
             temp = {...state};
             temp.userAcc.active = false
+            temp.userAcc.user = { id: "", nickname: "", email: "", password: "",}
             return {...temp};
+
         case USER_ACC_NAVBAR_ACTIVATE:
             return {...state, userAccNavBar: {active: true}};
+
         case USER_ACC_NAVBAR_DEACTIVATE:
             return {...state, userAccNavBar: {active: false}};
+
         case USER_DATA_SAVE:
             temp = {...state};
             temp.userAcc.user = {

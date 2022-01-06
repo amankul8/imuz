@@ -7,12 +7,11 @@ import PasswordInputComponent from "../authInputControllers/PasswordInputCompone
 import SendComponent from "../authInputControllers/SendComponent";
 import {connect} from "react-redux";
 import {toast} from "react-toastify";
-import axios from "axios";
+import {userAuthorization} from "../../../redux/actions/userAccActionCreator";
 
 const AuthorizationUI = (props)=>{
 
     const sendHandler = async ()=>{
-        alert("Hi0");
         if(props.inputStates.nickName.correct.crowded){
             toast.error("Nickname слишком длинный !");
         }else if(props.inputStates.nickName.correct.empty){
@@ -22,7 +21,7 @@ const AuthorizationUI = (props)=>{
         }else if(!props.inputStates.password.correct){
             toast.error("Пороль не правильный !");
         }else {
-
+            props.userAuthorization({nickname: props.inputStates.nickName.text, password: props.inputStates.password.password});
         }
 
     }
@@ -59,7 +58,7 @@ const mapStateToProps =(state)=>{
 }
 
 const mapDispatchToProps = {
-
+    userAuthorization
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthorizationUI);

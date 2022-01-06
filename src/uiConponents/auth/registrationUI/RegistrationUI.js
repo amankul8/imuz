@@ -25,7 +25,7 @@ const RegistrationUI = (props)=>{
             toast.error("Email не правильный !");
         }else{
             props.userRegistration({
-                nickName: props.inputStates.nickName.text,
+                nickname: props.inputStates.nickName.text,
                 email: props.inputStates.email.email,
                 password: props.inputStates.password.password
             })
