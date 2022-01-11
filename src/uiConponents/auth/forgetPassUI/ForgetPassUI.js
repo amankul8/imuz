@@ -6,6 +6,7 @@ import MailInputComponent from "../authInputControllers/MailInputComponent";
 import SendComponent from "../authInputControllers/SendComponent";
 import {toast} from "react-toastify";
 import {connect} from "react-redux";
+import {userForgetPassword} from "../../../redux/actions/userAccActionCreator";
 
 const ForgetPassUI = (props)=>{
 
@@ -13,7 +14,7 @@ const ForgetPassUI = (props)=>{
         if(!props.inputStates.email.correct){
             toast.error("Email не правильный !");
         }else{
-            alert("Все ок")
+            props.userForgetPassword(props.inputStates.email.email);
         }
     }
 
@@ -43,4 +44,8 @@ const mapStateToProps =(state)=>{
     }
 }
 
-export default connect(mapStateToProps, null)(ForgetPassUI);
+const mapDispatchToProps = {
+    userForgetPassword
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ForgetPassUI);

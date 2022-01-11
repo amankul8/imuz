@@ -10,6 +10,7 @@ import {
 import axios from "axios";
 import {toast} from "react-toastify";
 import {inputReset} from "./authInputActionCreator";
+import appAxios from "../../axios";
 
 export  function authPageShow(){
     return { type: AUTH_PAGE_SHOW }
@@ -50,10 +51,14 @@ export function userDateSave(pl){
     }
 }
 
+
+//--------------------------------------------------------------------------------
+
+
 export function userRegistration(pl){
     toast.info("Request has been sent. !WAIT");
     return dispatch => {
-        axios.post(`http://localhost:5000/imuz/users/user/auth/registration`, pl)
+        appAxios.post(`/users/user/auth/registration`, pl)
             .then(res => {
                 if(res.status===201){
                     dispatch(inputReset());
@@ -69,24 +74,41 @@ export function userRegistration(pl){
     };
 }
 
-
 export function userAuthorization(pl){
     toast.info("Request has been sent. !WAIT");
     return dispatch => {
-        axios.post("http://localhost:5000/imuz/users/user/auth/authentication", pl)
+        appAxios.post("/users/user/auth/authentication", pl)
             .then(res => {
-                toast.info("User authorization success!");
-                dispatch(userDateSave({
-                    id: res.data._id,
-                    nickname: res.data.nickname,
-                    email: res.data.email,
-                    password: res.data.password
-                }));
-                dispatch(userAccActivate());
-                dispatch(inputReset());
+                if(res.status===200){
+                    dispatch(userDateSave({
+                        id: res.data._id,
+                        nickname: res.data.nickname,
+                        email: res.data.email,
+                        password: res.data.password
+                    }));
+                    dispatch(userAccActivate());
+                    dispatch(inputReset());
+                    toast.info("User authorization success!");
+                }
             })
             .catch(err => {
                 toast.info("Error while authorization !");
+            });
+    };
+}
+
+export function userForgetPassword(email){
+    toast.info("Request has been sent. !WAIT");
+    return dispatch => {
+        appAxios.post("/users/user/auth/forget_password", {email: email})
+            .then(res => {
+                if(res.status===200){
+                    dispatch(inputReset());
+                    toast.info("Password has been changed and sent your Email!");
+                }
+            })
+            .catch(err => {
+                toast.info("Error while changing !");
             });
     };
 }

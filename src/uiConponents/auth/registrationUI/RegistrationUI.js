@@ -18,9 +18,9 @@ const RegistrationUI = (props)=>{
         }else if(props.inputStates.nickName.correct.empty){
             toast.error("Поля для ввода имени пустой !");
         }else if(props.inputStates.nickName.correct.textError){
-            toast.error("В никнейме есть ошибка !");
+            toast.error("В никнейме есть ошибка (используйте только лат. буквы)!");
         }else if(!props.inputStates.password.correct){
-            toast.error("Пороль не правильный !");
+            toast.error("Пороль не правильный [от 4 до 8]!");
         }else if(!props.inputStates.email.correct){
             toast.error("Email не правильный !");
         }else{

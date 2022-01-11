@@ -18,7 +18,7 @@ function MailInputComponent(props){
         }else{
             props.inputMailError(false);
         }
-        props.inputMailChange(text);
+        props.inputMailChange(text.toLowerCase());
     }
 
     return(

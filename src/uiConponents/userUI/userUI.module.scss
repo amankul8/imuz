@@ -1,0 +1,38 @@
+.uiWrapper{
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  transition: 300ms ease-in-out;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  &:hover{
+    background: #DBE6E5;
+  }
+  .userAvatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    align-self: center;
+    img{
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      cursor: default;
+    }
+  }
+  .userName{
+    width: 85%;
+    align-self: center;
+    font-size: 16px;
+    font-family: Roboto sans-serif;
+
+  }
+  img{
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    cursor: pointer;
+  }
+}
